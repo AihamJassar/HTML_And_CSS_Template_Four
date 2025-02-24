@@ -24,6 +24,10 @@ a {
     text-decoration: none;
 }
 
+.container {
+    padding: 0 20px;
+}
+
 .page {
     display: flex;
 }
@@ -65,14 +69,6 @@ h3.logo::before {
     left: 0;
 }
 
-@media (max-width:767px) {
-
-    h3.logo::before,
-    h3.logo::after {
-        display: none;
-    }
-}
-
 h3.logo::after {
     content: "";
     width: 12px;
@@ -84,6 +80,14 @@ h3.logo::after {
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 7px);
+}
+
+@media (max-width:767px) {
+
+    h3.logo::before,
+    h3.logo::after {
+        display: none;
+    }
 }
 
 .page .sidebar ul {
@@ -102,13 +106,17 @@ h3.logo::after {
     background-color: rgb(218, 218, 218);
 }
 
+.page .sidebar ul li a.active {
+    background-color: rgb(218, 218, 218);
+}
+
 .page .sidebar ul li a i {
     margin-right: 5px;
 }
 
 @media (max-width:767px) {
     .page .sidebar ul {
-        margin: 10px 10px;
+        margin: 10px
     }
 
     .page .sidebar ul li span {
@@ -116,22 +124,9 @@ h3.logo::after {
     }
 
     .page .sidebar ul li a {
-        text-align: center;
-        margin: 5px auto;
-        padding: 5px 5px;
+        margin: 10px auto;
+        padding: 5px;
     }
-}
-
-.page .sidebar ul li a.active {
-    background-color: rgb(218, 218, 218);
-}
-
-.container {
-    padding: 0 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
 }
 
 .page .content {
@@ -143,20 +138,18 @@ h3.logo::after {
     background-color: white;
 }
 
-.page .content .header input[type="search"] {
-    padding: 7px 7px 7px 30px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    width: 150px;
-    position: relative;
-    transition: width 0.5s;
+.page .content .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
 }
 
-.page .content .header label {
+.page .content .header .container label {
     position: relative;
 }
 
-.page .content .header label::before {
+.page .content .header .container label::before {
     font-family: 'Font Awesome 5 Free';
     content: "\f002";
     font-weight: 900;
@@ -168,27 +161,59 @@ h3.logo::after {
     z-index: 1;
 }
 
-.page .content .header input[type="search"]:focus {
+.page .content .header .container input[type="search"] {
+    padding: 7px 7px 7px 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 150px;
+    transition: width 0.5s;
+}
+
+.page .content .header .container input[type="search"]:focus {
     width: 250px;
 }
 
 @media (max-width:767px) {
-    .page .content .header input[type="search"]:focus {
+    .page .content .header .container input[type="search"]:focus {
         width: 150px;
     }
 }
 
-.page .content .header .nav {
+.page .content .header .container .nav {
     display: flex;
     align-items: center;
 }
 
-.page .content .header .nav i {
+.page .content .header .container .nav i {
     font-size: 20px;
-    margin-left: 10px;
 }
 
-.page .content .header .nav img {
+.page .content .header .container .nav img {
     width: 30px;
-    margin-left: 10px;
+    margin: 0 10px;
+}
+
+h1.main-header {
+    position: relative;
+    width: fit-content;
+    padding: 10px 0;
+}
+
+h1.main-header::before {
+    content: "";
+    width: 70%;
+    height: 3px;
+    background-image: linear-gradient(to right, black 30%, white 30%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.secondary-header h2 {
+    margin-bottom: 5px;
+}
+.secondary-header p {
+    color: #777;
+}
+.page .content .main-section {
+    
 }
