@@ -3,9 +3,11 @@
     margin: 0;
     padding: 0;
 }
+
 *:focus {
     outline: none;
 }
+
 html {
     scroll-behavior: smooth;
 }
@@ -22,30 +24,37 @@ a {
     text-decoration: none;
 }
 
+.page {
+    display: flex;
+}
+
 .sidebar {
-    width: fit-content;
     min-height: 100vh;
     box-shadow: 0 30px 150px 10px rgb(99, 102, 102);
 }
+
 @media (max-width:767px) {
     .sidebar {
-      width: 50px;
+        width: 50px;
     }
 }
+
 h3.logo {
     width: fit-content;
     height: 60px;
-    margin: 0 auto ;
+    margin: 0 auto;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 @media (max-width:767px) {
     h3.logo {
-      font-size: 13px;
+        font-size: 13px;
     }
 }
+
 h3.logo::before {
     content: "";
     width: 100%;
@@ -55,12 +64,15 @@ h3.logo::before {
     bottom: 0;
     left: 0;
 }
+
 @media (max-width:767px) {
+
     h3.logo::before,
-    h3.logo::after{
+    h3.logo::after {
         display: none;
     }
 }
+
 h3.logo::after {
     content: "";
     width: 12px;
@@ -77,32 +89,43 @@ h3.logo::after {
 .page .sidebar ul {
     margin: 30px 20px;
 }
+
 .page .sidebar ul li a {
     display: block;
-    padding: 10px 10px;
+    padding: 10px 20px 10px 10px;
     margin-bottom: 5px;
     border-radius: 10px;
     color: black;
 }
+
 .page .sidebar ul li a:hover {
     background-color: rgb(218, 218, 218);
 }
+
 .page .sidebar ul li a i {
     margin-right: 5px;
 }
+
 @media (max-width:767px) {
     .page .sidebar ul {
         margin: 10px 10px;
     }
+
     .page .sidebar ul li span {
         display: none;
     }
+
     .page .sidebar ul li a {
         text-align: center;
         margin: 5px auto;
         padding: 5px 5px;
     }
 }
+
+.page .sidebar ul li a.active {
+    background-color: rgb(218, 218, 218);
+}
+
 .container {
     padding: 0 10px;
     display: flex;
@@ -110,24 +133,29 @@ h3.logo::after {
     align-items: center;
     height: 60px;
 }
+
 .page .content {
     flex: 1;
     background-color: rgb(233, 239, 239);
 }
+
 .page .content .header {
     background-color: white;
 }
+
 .page .content .header input[type="search"] {
     padding: 7px 7px 7px 30px;
     border: 1px solid #ccc;
-    border-radius: 10px;   
+    border-radius: 10px;
     width: 150px;
     position: relative;
     transition: width 0.5s;
 }
+
 .page .content .header label {
     position: relative;
 }
+
 .page .content .header label::before {
     font-family: 'Font Awesome 5 Free';
     content: "\f002";
@@ -143,21 +171,24 @@ h3.logo::after {
 .page .content .header input[type="search"]:focus {
     width: 250px;
 }
+
 @media (max-width:767px) {
     .page .content .header input[type="search"]:focus {
         width: 150px;
     }
 }
+
 .page .content .header .nav {
     display: flex;
     align-items: center;
 }
+
 .page .content .header .nav i {
     font-size: 20px;
     margin-left: 10px;
 }
+
 .page .content .header .nav img {
     width: 30px;
     margin-left: 10px;
-
 }
