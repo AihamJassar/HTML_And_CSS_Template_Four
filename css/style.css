@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+*:focus {
+    outline: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.sidebar {
+    min-width: 180px;
+    min-height: 100vh;
+    box-shadow: 1px 0 5px 0 rgb(148, 147, 147);
+}
+
+h3.logo {
+    width: fit-content;
+    height: 60px;
+    margin: 0 auto ;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h3.logo::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+h3.logo::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: black;
+    border: 4px solid white;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 7px);
+}
+
+.page .sidebar ul {
+    margin: 30px 20px;
+}
+.page .sidebar ul li a {
+    display: block;
+    padding: 10px 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    color: black;
+}
+.page .sidebar ul li a:hover {
+    background-color: rgb(218, 218, 218);
+}
+.page .sidebar ul li a i {
+    margin-right: 5px;
+}
+.page .content {
+    flex: 1;
+    padding: 0 10px;
+}
+.page .content .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: antiquewhite;
+}
+.page .content .header input[type="search"] {
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 10px;   
+    transition: width 5s;
+    transition-timing-function: linear;
+    position: relative;
+}
+
+.page .content .header input[type="search"]::before {
+    display: block;
+    content: "33333";
+    width: 10px;
+    height: 10px;
+    background-color: aqua;
+    position: absolute;
+}
+
+.page .content .header input[type="search"]:focus {
+    width: 300px;
+}
+.page .content .header .nav {
+    display: flex;
+    align-items: center;
+}
+.page .content .header .nav i {
+    font-size: 20px;
+}
+.page .content .header .nav img {
+    width: 30px;
+    margin-left: 10px;
+
+}
