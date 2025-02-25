@@ -208,12 +208,312 @@ h1.main-header::before {
     bottom: 0;
     left: 0;
 }
+.secondary-header {
+    margin-bottom: 20px;
+}
 .secondary-header h2 {
-    margin-bottom: 5px;
+    margin-bottom: 10px
 }
 .secondary-header p {
     color: #777;
 }
-.page .content .main-section {
-    
+.page .content .main-section .content {
+    margin: 20px auto;
+}
+.page .content .main-section .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.page .content .main-section .content > div {
+    min-width: 450px;
+    flex: 1;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+@media (max-width: 767px) {
+    .page .content .main-section .content > div {
+        min-width: 100%;
+    }
+}
+
+/* Special Styles*/
+
+.page .content .main-section .content .welcome {
+    padding: 0;
+    overflow: hidden;
+}
+
+.page .content .main-section .content .welcome .box-top {
+    display: flex;
+    justify-content: space-between;
+    min-height: 100px;
+    padding: 15px;
+    background-color: lightgrey;
+    position: relative;
+}
+
+@media (max-width: 767px) {
+    .page .content .main-section .content .welcome .box-top img.welcome-image {
+       display: none;
+     }
+}
+
+.page .content .main-section .content .welcome .box-top img.welcome-avatar {
+    width: 50px;
+    border: 3px solid white;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+}
+
+.page .content .main-section .content .welcome .info {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 50px auto 15px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.page .content .main-section .content .welcome .info div span {
+    display: block;
+    text-align: center;
+}
+
+.page .content .main-section .content .welcome .info div span:last-child {
+    color: #777;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.page .content .main-section .content .welcome a {
+    display: block;
+    width: fit-content;
+    background-color: lightskyblue;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin: 20px 10px 20px auto;
+}
+
+.quick-draft input[type="text"],
+.quick-draft textarea {
+    display: block;
+    width: 100%;
+    margin-top: 10px; 
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: lightgrey;
+}
+
+.quick-draft textarea {
+    height: 190px;
+    resize: none;
+}
+
+.quick-draft input[type="submit"] {
+    display: block;
+    width: fit-content;
+    padding: 5px 10px;
+    background-color: lightskyblue;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin-top: 20px;
+    margin-left: auto;
+}
+.yearly-targets .box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.yearly-targets .box .icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+}
+
+.yearly-targets .box:nth-child(2) .icon{
+    background-color: rgb(0 0 255 / 20%);
+}
+
+.yearly-targets .box:nth-child(3) .icon{
+    background-color: rgb(0 255 0 / 20%);
+}
+
+.yearly-targets .box:nth-child(4) .icon{
+    background-color: rgb(255 0 0 / 20%);
+}
+
+.yearly-targets .box .icon i {
+    color: rgb(0 0 255);
+}
+
+.yearly-targets .box:nth-child(2) .icon i{
+    color: rgb(0 0 255);
+}
+
+.yearly-targets .box:nth-child(3) .icon i{
+    color: rgb(0 255 0);
+}
+
+.yearly-targets .box:nth-child(4) .icon i{
+    color: rgb(255 0 0);
+}
+
+.yearly-targets .box .info {
+    flex: 1;
+}
+
+.yearly-targets .box .info span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.yearly-targets .box .info span:first-child {
+    font-size: 12px;
+    color: #777;
+}
+
+.yearly-targets .box .info span {
+    font-weight: bold;
+}
+
+.yearly-targets .box .info .line {
+    height: 2px;
+    margin-top: 20px;
+}
+
+.yearly-targets .box:nth-child(2) .info .line {
+    background-color: rgb(0 0 255 / 20%);
+}
+
+.yearly-targets .box:nth-child(3) .info .line {
+    background-color: rgb(0 255 0 / 20%);
+}
+
+.yearly-targets .box:nth-child(4) .info .line {
+    background-color: rgb(255 0 0 / 20%);
+}
+
+.yearly-targets .box .info .line span {
+    display: block;
+    height: 2px;
+    position: relative;
+}
+
+.yearly-targets .box:nth-child(2) .info .line span {
+    background-color: rgb(0 0 255);
+}
+
+.yearly-targets .box:nth-child(3) .info .line span {
+    background-color: rgb(0 255 0);
+}
+
+.yearly-targets .box:nth-child(4) .info .line span {
+    background-color: rgb(255 0 0);
+}
+
+.yearly-targets .box .info .line span::before {
+    content: attr(data-progress);
+    width: 30px;
+    height: 20px;
+    border-radius: 6px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: -15px;
+    top: -30px;
+}
+
+.yearly-targets .box:nth-child(2) .info .line span::before {
+    background-color: rgb(0 0 255);
+}
+
+.yearly-targets .box:nth-child(3) .info .line span:before {
+    background-color: rgb(0 255 0);
+}
+
+.yearly-targets .box:nth-child(4) .info .line span:before {
+    background-color: rgb(255 0 0);
+}
+
+.yearly-targets .box .info .line span::after {
+    content: "";
+    border: 4px solid;
+    position: absolute;
+    right: -2px;
+    top: -10px;
+}
+
+.yearly-targets .box:nth-child(2) .info .line span:after {
+    border-color: rgb(0 0 255) transparent transparent transparent;
+}
+
+.yearly-targets .box:nth-child(3) .info .line span:after {
+    border-color: rgb(0 255 0) transparent transparent transparent;
+}
+
+.yearly-targets .box:nth-child(4) .info .line span:after {
+    border-color: rgb(255 0 0) transparent transparent transparent;
+}
+
+.tickets-statistics .boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.tickets-statistics .boxes .box {
+    border: 1px solid #777;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.tickets-statistics .boxes .box i {
+    margin-top: 10px;
+    font-size: 23px;
+}
+
+.tickets-statistics .boxes .box:nth-child(1) i {
+    color: darkorange;
+}
+
+.tickets-statistics .boxes .box:nth-child(2) i {
+    color: deepskyblue;
+}
+
+.tickets-statistics .boxes .box:nth-child(3) i {
+    color: greenyellow;
+}
+
+.tickets-statistics .boxes .box:nth-child(4) i {
+    color: red;
+}
+
+.tickets-statistics .boxes .box span {
+    display: block;
+    margin: 10px auto;
+}
+
+.tickets-statistics .boxes .box span:nth-child(2){
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.tickets-statistics .boxes .box span:nth-child(3){
+    font-size: 14px;
+    color: #777;
 }
