@@ -876,12 +876,13 @@ h1.main-header::before {
 
 .projects table {
   width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
 }
 .projects table tr td {
+    min-width: fit-content;
   padding: 20px;
   border: 1px solid #e9e8e8;
-  border-collapse: collapse;
-  border-spacing: 0;
   position: relative;
 
 }
@@ -892,4 +893,8 @@ h1.main-header::before {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.projects {
+    overflow: hidden;
 }
