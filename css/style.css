@@ -196,6 +196,7 @@ h1.main-header::before {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  padding-bottom: 20px;
 }
 .page .content .main-section .content > div {
   min-width: 450px;
@@ -811,25 +812,52 @@ position: relative;
   font-size: 12px;
   margin-top: 5px;
 }
-.mainbox::before {
+.toggle-button {
   content: "";
-  width: 40px;
-  height: 5px;
-  padding: 5px 10px;
-  background: var(--main-color);
+  display: block;
+  width: 35px;
+  height: 15px;
   border-radius: 15px;
-  position: absolute;
+  background: var(--main-color);
+  cursor: pointer;
+  position: relative;
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
 }
-.site-controll textarea {
+.toggle-button:hover {
+  background-color: var(--border-color);
+}
+.toggle-button::before {
+  display: block;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  position: absolute;
+  top: 50%;
+  right: 3px;
+  transform: translateY(-50%);
+}
+.toggle-button:hover::before {
+  left: 3px;
+}
+.site-control textarea {
   width: 100%;
   height: 200px;
   border: 1px solid var(--border-color);
+  border-radius: 10px;
   padding: 10px;
   resize: none;
   background: var(--background-color);
+}
+.site-control .main-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 .general-info label {
   display: block;
@@ -846,7 +874,6 @@ position: relative;
 .general-info form .email {
   display: flex;
   flex-wrap: wrap;
-  justifycontent: space-between;
   align-items: center;
   gap: 10px;
 }
@@ -861,11 +888,13 @@ position: relative;
   font-weight: bold;
   background: var(--main-color);
 }
-
 .security-info .box-sec {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
+.security-info .box-sec:not(:last-child) {
   border-bottom: 1px solid var(--border-color);
 }
 .security-info .box-sec button {
@@ -877,56 +906,74 @@ position: relative;
   background: var(--main-color);
 }
 .social-info label {
-  /* border: 1px solid var(--border-color); */
+  display: block;
   position: relative;
 }
-.social-info label::before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f099";
+.social-info label i {
   font-size: 14px;
-  font-weight:900;
   position: absolute;
   top: 50%;
-  left: 10px;
+  left: 14px;
   transform: translateY(-50%);
 }
-.social-info label:nth-child(2)::before {
-  content: "\f081";
-}
-.social-info labe l::after{
-  content: "";
-  width: 1px;
-  height: 100%;
-  background: var(--border-color);
-  position: absolute;
-
-  left: 24px;
-  
+.social-info label {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
 }
 .social-info input {
-  /* width: calc(100% - 30px); */
-  margin-bottom: 10px;
-  border-radius: 6px;
-  padding: 5px 5px 5px 30px;
-  border: 1px solid var(--border-color);
+  width: 100%;
+  border: none;
+  padding: 10px;
+  margin-left: 40px;
+  border-left: 1px solid var(--border-color);
 }
-.widgets-control div {
-  margi-bottom: 15px;
-},
-.widgets-control input {
-  paddingleft: 10px ;
-}
-.widgets-control .boxes {
-  display: grid;
+.widgets-control div:not(:first-child) {
+  display: flex;
+  align-items: center;
   gap: 10px;
-  grid-auto-columns: repeat(auto-fill, minmax(150px, 1fr));
+  margin-bottom: 15px;
 }
-.widgets-control .box span {
-  display: block;
+.widgets-control input {
+  width: 18px;
+  height: 18px;
 }
 .backup-manager form {
   border-bottom: 1px solid var(--border-color);
-  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+.backup-manager form div{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.backup-manager form input {
+  width: 18px;
+  height: 18px;
+}
+.backup-manager .boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.backup-manager .boxes .box {
+  text-align: center;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 15px 0;
+  flex: 1;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .backup-manager .boxes {
+    flex-direction: column;
+  }
+}
+.backup-manager .boxes .box span {
+  display: block;
+  margin-top: 10px;
 }
 /* Start Animation */
 @keyframes current-phase {
