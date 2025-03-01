@@ -5,6 +5,7 @@
   --border-color: #ccc;
   --separator-color: #e6e2e2;
   --background-color: #eee;
+  --main-font-size : 14px;
 }
 * {
   -webkit-box-sizing: border-box;
@@ -798,6 +799,134 @@ h1.main-header::before {
 }
 .projects table tr td span.in-progress {
   background-color: #0075ff;
+}
+
+/* Start Settings page*/
+.main-box {
+padding: 15px 0;
+position: relative;
+}
+.main-box p {
+  color: var(--text-color);
+  font-size: 12px;
+  margin-top: 5px;
+}
+.mainbox::before {
+  content: "";
+  width: 40px;
+  height: 5px;
+  padding: 5px 10px;
+  background: var(--main-color);
+  border-radius: 15px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.site-controll textarea {
+  width: 100%;
+  height: 200px;
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  resize: none;
+  background: var(--background-color);
+}
+.general-info label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: var(--main-font-size);
+  color: var(--text-color);
+}
+.general-info input {
+  border: 1px solid var(--border-color);
+  padding: 5px;
+  width: 100%;
+  border-radius: 10px;
+}
+.general-info form .email {
+  display: flex;
+  flex-wrap: wrap;
+  justifycontent: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.general-info input[type="email"] {
+  flex: 1;
+  min-width: 70%;
+}
+.general-info input[type="submit"] {
+  width: fit-content;
+  border: none;
+  color: white;
+  font-weight: bold;
+  background: var(--main-color);
+}
+
+.security-info .box-sec {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+.security-info .box-sec button {
+  padding: 5px;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  background: var(--main-color);
+}
+.social-info label {
+  /* border: 1px solid var(--border-color); */
+  position: relative;
+}
+.social-info label::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f099";
+  font-size: 14px;
+  font-weight:900;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+.social-info label:nth-child(2)::before {
+  content: "\f081";
+}
+.social-info labe l::after{
+  content: "";
+  width: 1px;
+  height: 100%;
+  background: var(--border-color);
+  position: absolute;
+
+  left: 24px;
+  
+}
+.social-info input {
+  /* width: calc(100% - 30px); */
+  margin-bottom: 10px;
+  border-radius: 6px;
+  padding: 5px 5px 5px 30px;
+  border: 1px solid var(--border-color);
+}
+.widgets-control div {
+  margi-bottom: 15px;
+},
+.widgets-control input {
+  paddingleft: 10px ;
+}
+.widgets-control .boxes {
+  display: grid;
+  gap: 10px;
+  grid-auto-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+.widgets-control .box span {
+  display: block;
+}
+.backup-manager form {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 15px;
 }
 /* Start Animation */
 @keyframes current-phase {
